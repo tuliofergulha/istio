@@ -59,11 +59,18 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 ### Grafana
 * `kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.19/samples/addons/grafana.yaml`
 
+## Setup Fortio - Load Tests
+* `kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.19/samples/httpbin/sample-client/fortio-deploy.yaml`
+* ` export FORTIO_POD=$(kubectl get pods -l app=fortio -o 'jsonpath={.items[0].metadata.name}')`
+* `kubectl exec "$FORTIO_POD" -c fortio -- fortio load -c 2 -qps 0 -t 200s -loglevel Warning http://istio-app-service:8000`
+
+### Bash - Load test
+* `while true; do curl -s http://localhost:8000 | grep -o '<h1>[^<]*</h1>' | sed 's/<[^>]*>//g'; sleep 0.5; done`
+
 ## Commands
 * `kubectl apply -f deployment.yaml`
+* `kubectl apply -f virtual-service.yaml`
 * `kubectl get pods`
-* `kubectl delete deploy nginx`
+* `kubectl delete deploy istio-app`
 * `kubectl describe pods ${POD_NAME}`
 
-### Use to perform load test
-* `while true; do curl -s http://localhost:8000 | grep -o '<h1>[^<]*</h1>' | sed 's/<[^>]*>//g'; sleep 0.5; done`

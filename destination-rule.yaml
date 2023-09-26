@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: istio-app-dr
+spec:
+  host: istio-app-service
+  subsets:
+  - name: canary
+    labels:
+      version: canary
+  - name: release
+    labels:
+      version: release
