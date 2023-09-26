@@ -64,3 +64,16 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 * `kubectl get pods`
 * `kubectl delete deploy nginx`
 * `kubectl describe pods ${POD_NAME}`
+
+
+## Istio Components
+
+### Virtual Service
+* Match
+* Retries
+* Fault Injection
+* Timeout
+* Subset (Canary / Release)
+
+### Destination Rule
+* Apply configuration to route traffic to correct path
