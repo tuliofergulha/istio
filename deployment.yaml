@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: istio-app
+        version: canary
     spec:
       containers:
       - name: istio-app
@@ -35,6 +36,7 @@ spec:
     metadata:
       labels:
         app: istio-app
+        version: release
     spec:
       containers:
       - name: istio-app
@@ -51,7 +53,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: istio-app
+  name: istio-app-service
 spec:
   type: LoadBalancer
   selector:

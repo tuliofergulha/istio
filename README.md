@@ -65,3 +65,5 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 * `kubectl delete deploy nginx`
 * `kubectl describe pods ${POD_NAME}`
 
+### Use to perform load test
+* `while true; do curl -s http://localhost:8000 | grep -o '<h1>[^<]*</h1>' | sed 's/<[^>]*>//g'; sleep 0.5; done`
