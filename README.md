@@ -51,6 +51,7 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 
 ### Kiali
 * `kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.19/samples/addons/kiali.yaml`
+* `istioctl dashboard kiali`
 
 ### Jaeger
 * `kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.19/samples/addons/jaeger.yaml`
@@ -62,4 +63,4 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 * `kubectl apply -f deployment.yaml`
 * `kubectl get pods`
 * `kubectl delete deploy nginx`
-* `kubectl describe pods pod-name`
+* `kubectl describe pods ${POD_NAME}`
