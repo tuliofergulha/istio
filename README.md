@@ -74,3 +74,7 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 * `kubectl delete deploy istio-app`
 * `kubectl describe pods ${POD_NAME}`
 
+## How to configure Gateway Ingress
+* Adjust `nodePort` into Service to 30001
+* Edit istio-ingressgateway, adjust http2 port to 30000 (to edit with VIM, `I` to insert, `ESC` to exit, `:wq` to save and exit)
+* `kubectl edit svc istio-ingressgateway -n istio-system`
