@@ -4,6 +4,7 @@ This project is a simple example of how you can create, test and use for your st
 
 ## Technologies
 
+* Docker - https://docs.docker.com/
 * k3d - https://k3d.io/
 * Istio - https://istio.io/
 

@@ -10,8 +10,8 @@ spec:
     - destination:
         host: istio-app-service
         subset: canary
-      weight: 100
+      weight: 0
     - destination:
         host: istio-app-service
         subset: release
-      weight: 0
+      weight: 100
