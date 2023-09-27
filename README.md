@@ -61,7 +61,7 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 
 ## Setup Fortio - Load Tests
 * `kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.19/samples/httpbin/sample-client/fortio-deploy.yaml`
-* ` export FORTIO_POD=$(kubectl get pods -l app=fortio -o 'jsonpath={.items[0].metadata.name}')`
+* `export FORTIO_POD=$(kubectl get pods -l app=fortio -o 'jsonpath={.items[0].metadata.name}')`
 * `kubectl exec "$FORTIO_POD" -c fortio -- fortio load -c 2 -qps 0 -t 200s -loglevel Warning http://istio-app-service:8000`
 
 ### Bash - Load test
@@ -69,7 +69,7 @@ Documentation link: https://istio.io/latest/docs/ops/integrations/
 
 ## Commands
 * `kubectl apply -f deployment.yaml`
-* `kubectl apply -f virtual-service.yaml`
+* `kubectl apply -f deployment.yaml`
 * `kubectl get pods`
 * `kubectl delete deploy istio-app`
 * `kubectl describe pods ${POD_NAME}`
