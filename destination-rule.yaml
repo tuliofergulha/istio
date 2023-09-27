@@ -4,10 +4,16 @@ metadata:
   name: istio-app-dr
 spec:
   host: istio-app-service
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
   subsets:
   - name: canary
     labels:
       version: canary
+    trafficPolicy:
+      loadBalancer:
+        simple: LEAST_REQUEST
   - name: release
     labels:
       version: release

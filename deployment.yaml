@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: istio-app-canary
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: istio-app
@@ -30,7 +30,7 @@ kind: Deployment
 metadata:
   name: istio-app-release
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app: istio-app
